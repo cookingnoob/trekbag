@@ -1,5 +1,13 @@
+import Button from "./Button";
+
 const AddItemForm = () => {
-  return <div>AddItemForm</div>;
+  return (
+    <form>
+      <h2>Add an item</h2>
+      <input type="text" />
+      <Button className="btn">Add to list</Button>
+    </form>
+  );
 };
 
 export default AddItemForm;

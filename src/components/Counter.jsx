@@ -1,5 +1,5 @@
 const Counter = () => {
-  return <div>Counter</div>;
+  return <p>1 / 3 items</p>;
 };
 
 export default Counter;
