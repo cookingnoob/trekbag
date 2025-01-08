@@ -29,6 +29,13 @@ function App() {
     setList(itemLists);
   };
 
+  const markAllAsComplete = () => {
+    const newList = list.map((i) => {
+      return { ...i, packed: true };
+    });
+    setList(newList);
+  };
+
   return (
     <>
       <BackgroundHeading />
@@ -39,6 +46,7 @@ function App() {
           addItem={addItem}
           removeAllItems={removeAllItems}
           resetToInitial={resetToInitial}
+          markAllAsComplete={markAllAsComplete}
         />
       </main>
       <Footer />
