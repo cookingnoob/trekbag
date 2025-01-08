@@ -36,6 +36,13 @@ function App() {
     setList(newList);
   };
 
+  const markAllAsIncomplete = () => {
+    const newList = list.map((i) => {
+      return { ...i, packed: false };
+    });
+    setList(newList);
+  };
+
   return (
     <>
       <BackgroundHeading />
@@ -47,6 +54,7 @@ function App() {
           removeAllItems={removeAllItems}
           resetToInitial={resetToInitial}
           markAllAsComplete={markAllAsComplete}
+          markAllAsIncomplete={markAllAsIncomplete}
         />
       </main>
       <Footer />

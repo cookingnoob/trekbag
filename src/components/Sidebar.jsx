@@ -6,6 +6,7 @@ const Sidebar = ({
   removeAllItems,
   resetToInitial,
   markAllAsComplete,
+  markAllAsIncomplete,
 }) => {
   return (
     <div className="sidebar">
@@ -14,6 +15,7 @@ const Sidebar = ({
         removeAllItems={removeAllItems}
         resetToInitial={resetToInitial}
         markAllAsComplete={markAllAsComplete}
+        markAllAsIncomplete={markAllAsIncomplete}
       />
     </div>
   );
