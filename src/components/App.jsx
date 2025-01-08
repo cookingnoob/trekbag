@@ -25,13 +25,21 @@ function App() {
     setList([]);
   };
 
+  const resetToInitial = () => {
+    setList(itemLists);
+  };
+
   return (
     <>
       <BackgroundHeading />
       <main>
         <Header />
         <ItemList list={list} />
-        <Sidebar addItem={addItem} removeAllItems={removeAllItems} />
+        <Sidebar
+          addItem={addItem}
+          removeAllItems={removeAllItems}
+          resetToInitial={resetToInitial}
+        />
       </main>
       <Footer />
     </>
