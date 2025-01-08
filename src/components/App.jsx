@@ -21,13 +21,17 @@ function App() {
     setList(newItems);
   };
 
+  const removeAllItems = () => {
+    setList([]);
+  };
+
   return (
     <>
       <BackgroundHeading />
       <main>
         <Header />
         <ItemList list={list} />
-        <Sidebar addItem={addItem} />
+        <Sidebar addItem={addItem} removeAllItems={removeAllItems} />
       </main>
       <Footer />
     </>

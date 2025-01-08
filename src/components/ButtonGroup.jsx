@@ -1,13 +1,14 @@
 import { secondaryButtons } from "../lib/constants";
 import Button from "./Button";
 
-const ButtonGroup = () => {
+const ButtonGroup = ({ removeAllItems }) => {
+  const buttons = [{ text: "Remove all items", action: removeAllItems }];
   return (
     <section className="button-group">
-      {secondaryButtons.map((text) => {
+      {buttons.map((button) => {
         return (
-          <Button key={text} type="group">
-            {text}
+          <Button onClick={button.action} key={button.text} buttonType="group">
+            {button.text}
           </Button>
         );
       })}
