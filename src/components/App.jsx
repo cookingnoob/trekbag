@@ -43,12 +43,30 @@ function App() {
     setList(newList);
   };
 
+  const deleteTask = (id) => {
+    const newList = list.filter((l) => l.id !== id);
+    setList(newList);
+  };
+
+  const toggleTaskStatus = (id) => {
+    const newList = list.map((item) => {
+      if (item.id === id) {
+        return { ...item, packed: !item.packed };
+      }
+      return item;
+    });
+    setList(newList);
+  };
   return (
     <>
       <BackgroundHeading />
       <main>
         <Header />
-        <ItemList list={list} />
+        <ItemList
+          list={list}
+          deleteTask={deleteTask}
+          toggleTaskStatus={toggleTaskStatus}
+        />
         <Sidebar
           addItem={addItem}
           removeAllItems={removeAllItems}

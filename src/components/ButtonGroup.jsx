@@ -1,4 +1,3 @@
-import { secondaryButtons } from "../lib/constants";
 import Button from "./Button";
 
 const ButtonGroup = ({
@@ -13,6 +12,7 @@ const ButtonGroup = ({
     { text: "Reset to initial", action: resetToInitial },
     { text: "Remove all items", action: removeAllItems },
   ];
+
   return (
     <section className="button-group">
       {buttons.map((button) => {
