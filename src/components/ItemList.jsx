@@ -8,8 +8,8 @@ const ItemList = ({ list, deleteTask, toggleTaskStatus }) => {
           <Item
             key={item.id}
             item={item}
-            deleteTask={deleteTask}
-            toggleTaskStatus={toggleTaskStatus}
+            onDeleteTask={deleteTask}
+            onToggleStatus={toggleTaskStatus}
           />
         );
       })}

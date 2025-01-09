@@ -1,15 +1,15 @@
-const Item = ({ item, deleteTask, toggleTaskStatus }) => {
+const Item = ({ item, onDeleteTask, onToggleStatus }) => {
   return (
     <li className="item">
       <label>
         <input
-          onChange={() => toggleTaskStatus(item.id)}
+          onChange={() => onToggleStatus(item.id)}
           type="checkbox"
           checked={item.packed}
         />
         {item.name}
       </label>
-      <button onClick={() => deleteTask(item.id)}>❌</button>
+      <button onClick={() => onDeleteTask(item.id)}>❌</button>
     </li>
   );
 };
