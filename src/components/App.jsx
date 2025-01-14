@@ -57,11 +57,15 @@ function App() {
     });
     setList(newList);
   };
+
+  const totalItems = list.length;
+  const packedItems = list.filter((i) => i.packed === true).length;
+
   return (
     <>
       <BackgroundHeading />
       <main>
-        <Header />
+        <Header totalItems={totalItems} packedItems={packedItems} />
         <ItemList
           list={list}
           deleteTask={deleteTask}
