@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BackgroundHeading from "./BackgroundHeading";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -7,7 +7,13 @@ import Sidebar from "./Sidebar";
 import { itemLists } from "../lib/constants";
 
 function App() {
-  const [list, setList] = useState(itemLists);
+  const [list, setList] = useState(
+    () => JSON.parse(localStorage.getItem("items")) || itemLists
+  );
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(list));
+  }, [list]);
 
   const addItem = (itemName) => {
     const newItem = {
