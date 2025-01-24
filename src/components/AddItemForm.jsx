@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import Button from "./Button";
+import { useItemsStore } from "../stores/itemsStore";
 
-const AddItemForm = ({ addItem }) => {
+const AddItemForm = () => {
+  const addItem = useItemsStore((state) => state.addItem);
   const inputRef = useRef();
   const [text, setText] = useState("");
 
